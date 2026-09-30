@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rohan.dev - Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="navbar-inner">
+
+            <span class="brand">Rohan.dev</span>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('about')">About</a>
+                <a href="#" onclick="showPage('skills')">Skills</a>
+                <a href="#" onclick="showPage('projects')">Projects</a>
+                <a href="#" onclick="showPage('testimonials')">Testimonials</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="page-content" id="pageContent">
+
+        <!-- Home Page -->
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+
+                <p class="eyebrow">Hey, I'm</p>
+
+                <h1>Rohan S</h1>
+
+                <h2>Frontend Developer & UI Enthusiast</h2>
+
+                <p class="intro">
+                    I build fast, accessible, and visually engaging web applications.
+                    This portfolio is a small single-page application.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="btn primary"
+                        onclick="showPage('projects')">
+                        View Projects
+                    </button>
+
+                    <button
+                        class="btn ghost"
+                        onclick="showPage('contact')">
+                        Get in Touch
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-orb"></div>
+
+        </section>
+
+
+        <!-- About Page -->
+        <section class="section page" id="about">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="section-text">
+                I'm a developer who enjoys turning ideas into clean,
+                functional interfaces. I like working across the stack,
+                but I'm happiest fine-tuning UI details, component
+                structure, and interactions on the frontend.
+            </p>
+
+            <div class="facts-grid">
+
+                <div class="fact-card">
+                    <span class="fact-label">Based in</span>
+                    <span class="fact-value">Puducherry, India</span>
+                </div>
+
+                <div class="fact-card">
+                    <span class="fact-label">Focus</span>
+                    <span class="fact-value">React & Web Apps</span>
+                </div>
+
+                <div class="fact-card">
+                    <span class="fact-label">Experience</span>
+                    <span class="fact-value">2+ years</span>
+                </div>
+
+                <div class="fact-card">
+                    <span class="fact-label">Currently</span>
+                    <span class="fact-value">Building side projects</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills Page -->
+        <section class="section page" id="skills">
+
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills-groups">
+
+                <div class="skill-group">
+
+                    <h3>Frontend</h3>
+
+                    <div class="chip-row">
+                        <span class="chip">React</span>
+                        <span class="chip">JavaScript (ES6+)</span>
+                        <span class="chip">HTML5 & CSS3</span>
+                        <span class="chip">Tailwind CSS</span>
+                        <span class="chip">React Router</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Tools</h3>
+
+                    <div class="chip-row">
+                        <span class="chip">Git & GitHub</span>
+                        <span class="chip">Vite</span>
+                        <span class="chip">npm</span>
+                        <span class="chip">Figma</span>
+                        <span class="chip">Chrome DevTools</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Backend Basics</h3>
+
+                    <div class="chip-row">
+                        <span class="chip">Node.js</span>
+                        <span class="chip">Express</span>
+                        <span class="chip">REST APIs</span>
+                        <span class="chip">MongoDB</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projects Page -->
+        <section class="section page" id="projects">
+
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <h3>Attendance Tracker</h3>
+
+                    <p>
+                        A lightweight app to mark and track student
+                        attendance with live stats.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="chip small">JavaScript</span>
+                        <span class="chip small">CSS</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Calculator</h3>
+
+                    <p>
+                        A calculator supporting basic arithmetic
+                        operations.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="chip small">JavaScript</span>
+                        <span class="chip small">HTML</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Form Validation App</h3>
+
+                    <p>
+                        A registration form with real-time
+                        client-side validation rules.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="chip small">JavaScript</span>
+                        <span class="chip small">Forms</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>This Portfolio</h3>
+
+                    <p>
+                        A portfolio website built as a single-page
+                        application.
+                    </p>
+
+                    <div class="chip-row">
+                        <span class="chip small">HTML</span>
+                        <span class="chip small">CSS</span>
+                        <span class="chip small">JavaScript</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Testimonials Page -->
+        <section class="section page" id="testimonials">
+
+            <h2 class="section-title">Testimonials</h2>
+
+            <div class="testimonials-grid">
+
+                <blockquote class="testimonial-card">
+
+                    <p>
+                        "Rohan picks up new tools quickly and always
+                        ships clean, working UI."
+                    </p>
+
+                    <footer>
+                        — Project Mentor
+                    </footer>
+
+                </blockquote>
+
+
+                <blockquote class="testimonial-card">
+
+                    <p>
+                        "Great attention to detail — the small
+                        interactions really stood out."
+                    </p>
+
+                    <footer>
+                        — Team Lead, College Project
+                    </footer>
+
+                </blockquote>
+
+
+                <blockquote class="testimonial-card">
+
+                    <p>
+                        "Reliable and easy to collaborate with on
+                        frontend tasks."
+                    </p>
+
+                    <footer>
+                        — Peer Reviewer
+                    </footer>
+
+                </blockquote>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Page -->
+        <section class="section page" id="contact">
+
+            <h2 class="section-title">Contact</h2>
+
+            <p class="section-text">
+                Have a project in mind or just want to say hi?
+                Fill out the form below.
+            </p>
+
+            <div id="successBox" class="success-box">
+                Thanks! Your message has been noted!
+            </div>
+
+            <form class="contact-form" id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email">
+
+                <textarea
+                    id="message"
+                    placeholder="Your message"
+                    rows="5"></textarea>
+
+                <button
+                    type="submit"
+                    class="btn primary">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- 404 Page -->
+        <section class="section page" id="notFound">
+
+            <h2 class="section-title">
+                404 — Page Not Found
+            </h2>
+
+            <p class="section-text">
+                The page you're looking for doesn't exist.
+            </p>
+
+            <button
+                class="btn primary"
+                onclick="showPage('home')">
+                Back to Home
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © <span id="year"></span>
+            Rohan S — Built with HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

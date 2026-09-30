@@ -1,0 +1,31 @@
+let display = "";
+
+function handleClick(value) {
+
+    display = display + value;
+
+    document.getElementById("display").value = display;
+}
+
+function calculate() {
+
+    try {
+
+        display = eval(display).toString();
+
+        document.getElementById("display").value = display;
+
+    } catch {
+
+        display = "Error";
+
+        document.getElementById("display").value = display;
+    }
+}
+
+function clearDisplay() {
+
+    display = "";
+
+    document.getElementById("display").value = display;
+}

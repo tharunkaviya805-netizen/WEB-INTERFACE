@@ -1,0 +1,47 @@
+const students = [
+    {
+        name: "S.Magesh",
+        department: "B.E CSE",
+        year: "2nd Year",
+        attendance: "92%",
+        marks: "85%"
+    },
+
+    {
+        name: "Arun Kumar",
+        department: "B.E CSE",
+        year: "2nd Year",
+        attendance: "88%",
+        marks: "78%"
+    },
+
+    {
+        name: "Priya",
+        department: "B.E CSE",
+        year: "2nd Year",
+        attendance: "95%",
+        marks: "91%"
+    }
+];
+
+/* Display total students */
+document.getElementById("studentCount").innerHTML = students.length;
+
+/* Get table body */
+const table = document.getElementById("studentTable");
+
+/* Display student details */
+students.forEach(function(student) {
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${student.name}</td>
+        <td>${student.department}</td>
+        <td>${student.year}</td>
+        <td>${student.attendance}</td>
+        <td>${student.marks}</td>
+    `;
+
+    table.appendChild(row);
+});

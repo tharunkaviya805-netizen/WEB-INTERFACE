@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="container">
+
+            <h1>🎓 Student Dashboard</h1>
+
+            <div class="header">
+                <h2>Welcome Students 👋</h2>
+                <p>Manage your academic details easily</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>👨‍🎓 Students</h3>
+                    <h2 id="studentCount">3</h2>
+                </div>
+
+                <div class="card">
+                    <h3>📚 Department</h3>
+                    <h2>CSE</h2>
+                </div>
+
+                <div class="card">
+                    <h3>📅 Attendance</h3>
+                    <h2>92%</h2>
+                </div>
+
+                <div class="card">
+                    <h3>🏆 Average Marks</h3>
+                    <h2>85%</h2>
+                </div>
+
+            </div>
+
+            <h2>Student Details</h2>
+
+            <div class="tableBox">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                            <th>Attendance</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

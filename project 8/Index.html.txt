@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <h1>User Registration Form</h1>
+
+        <p class="subtitle">
+            Fields marked with * are mandatory and are validated
+        </p>
+
+        <div class="note">
+            Note: Username must exactly match the name entered in
+            the Aadhar Name field.
+        </div>
+
+        <form id="regForm" novalidate>
+
+            <!-- Username -->
+            <div class="field">
+
+                <label for="username">
+                    Username<span class="req">*</span>
+                </label>
+
+                <input type="text" id="username" name="username">
+
+                <span class="error" id="err-username"></span>
+
+            </div>
+
+
+            <!-- Aadhar Name -->
+            <div class="field">
+
+                <label for="aadharName">
+                    Aadhar Name<span class="req">*</span>
+                </label>
+
+                <input type="text" id="aadharName" name="aadharName">
+
+                <span class="error" id="err-aadharName"></span>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="field">
+
+                <label for="email">
+                    Email<span class="req">*</span>
+                </label>
+
+                <input type="text" id="email" name="email">
+
+                <span class="error" id="err-email"></span>
+
+            </div>
+
+
+            <!-- Mobile -->
+            <div class="field">
+
+                <label for="mobile">
+                    Mobile Number<span class="req">*</span>
+                </label>
+
+                <div class="phone-row">
+
+                    <select id="countryCode" name="countryCode">
+
+                        <option value="">Code</option>
+                        <option value="+91">+91 (IN)</option>
+                        <option value="+1">+1 (US)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (AU)</option>
+                        <option value="+971">+971 (UAE)</option>
+
+                    </select>
+
+                    <input
+                        type="text"
+                        id="mobile"
+                        name="mobile"
+                        maxlength="10"
+                        placeholder="10 digit number">
+
+                </div>
+
+                <span class="error" id="err-mobile"></span>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="field">
+
+                <label for="password">
+                    Password<span class="req">*</span>
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password">
+
+                <span class="error" id="err-password"></span>
+
+            </div>
+
+
+            <!-- Confirm Password -->
+            <div class="field">
+
+                <label for="confirmPassword">
+                    Confirm Password<span class="req">*</span>
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword">
+
+                <span
+                    class="error"
+                    id="err-confirmPassword">
+                </span>
+
+            </div>
+
+
+            <!-- Permanent Address -->
+            <div class="field full">
+
+                <label for="permanentAddress">
+                    Permanent Address<span class="req">*</span>
+                </label>
+
+                <textarea
+                    id="permanentAddress"
+                    name="permanentAddress">
+                </textarea>
+
+                <span
+                    class="error"
+                    id="err-permanentAddress">
+                </span>
+
+            </div>
+
+
+            <!-- Temporary Address -->
+            <div class="field full">
+
+                <label for="tempAddress">
+                    Temporary Address<span class="req">*</span>
+                </label>
+
+                <textarea
+                    id="tempAddress"
+                    name="tempAddress">
+                </textarea>
+
+                <span
+                    class="error"
+                    id="err-tempAddress">
+                </span>
+
+            </div>
+
+
+            <!-- Photo -->
+            <div class="field">
+
+                <label for="photo">
+                    Upload Photo (jpg/png, max 2MB)
+                    <span class="req">*</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="photo"
+                    name="photo"
+                    accept=".jpg,.jpeg,.png">
+
+                <span class="error" id="err-photo"></span>
+
+            </div>
+
+
+            <!-- Date of Birth -->
+            <div class="field">
+
+                <label for="dob">
+                    Date of Birth
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob">
+
+            </div>
+
+
+            <!-- Gender -->
+            <div class="field">
+
+                <label for="gender">
+                    Gender
+                </label>
+
+                <select id="gender" name="gender">
+
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Occupation -->
+            <div class="field">
+
+                <label for="occupation">
+                    Occupation
+                </label>
+
+                <input
+                    type="text"
+                    id="occupation"
+                    name="occupation">
+
+            </div>
+
+
+            <!-- Hobbies -->
+            <div class="field">
+
+                <label for="hobbies">
+                    Hobbies
+                </label>
+
+                <input
+                    type="text"
+                    id="hobbies"
+                    name="hobbies">
+
+            </div>
+
+
+            <!-- Alternate Phone -->
+            <div class="field">
+
+                <label for="altPhone">
+                    Alternate Phone Number
+                </label>
+
+                <input
+                    type="text"
+                    id="altPhone"
+                    name="altPhone">
+
+            </div>
+
+
+            <!-- Success -->
+            <div
+                class="success-msg"
+                id="successMsg">
+
+                Registration submitted successfully!
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="actions">
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Submit
+
+                </button>
+
+                <button
+                    type="reset"
+                    class="reset-btn"
+                    id="resetBtn">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+/* ================= PAGE NAVIGATION ================= */
+
+function showPage(pageName) {
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    const selectedPage = document.getElementById(pageName);
+
+    if (selectedPage) {
+        selectedPage.classList.add("active");
+    } else {
+        document.getElementById("notFound").classList.add("active");
+    }
+
+    window.scrollTo(0, 0);
+
+    closeMenu();
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu() {
+
+    const navLinks = document.getElementById("navLinks");
+
+    navLinks.classList.toggle("open");
+}
+
+
+function closeMenu() {
+
+    const navLinks = document.getElementById("navLinks");
+
+    navLinks.classList.remove("open");
+}
+
+
+/* ================= CONTACT FORM ================= */
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+
+        alert("Please fill all fields.");
+
+        return;
+    }
+
+    const successBox = document.getElementById("successBox");
+
+    successBox.innerHTML =
+        "Thanks " + name + ", your message has been noted!";
+
+    successBox.style.display = "block";
+
+    contactForm.style.display = "none";
+
+});
+
+
+/* ================= CURRENT YEAR ================= */
+
+document.getElementById("year").innerHTML =
+    new Date().getFullYear();
+
+
+/* ================= DEFAULT PAGE ================= */
+
+showPage("home");

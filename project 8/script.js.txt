@@ -1,0 +1,344 @@
+const form = document.getElementById("regForm");
+
+const successMsg =
+    document.getElementById("successMsg");
+
+
+/* Display Error */
+
+function setError(id, message) {
+
+    document.getElementById(
+        "err-" + id
+    ).textContent = message;
+}
+
+
+/* Clear Errors */
+
+function clearErrors() {
+
+    document
+        .querySelectorAll(".error")
+        .forEach(function(el) {
+
+            el.textContent = "";
+
+        });
+}
+
+
+/* Form Submit */
+
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    clearErrors();
+
+    successMsg.style.display = "none";
+
+
+    let isValid = true;
+
+
+    /* Get Values */
+
+    const username =
+        document.getElementById("username")
+        .value.trim();
+
+    const aadharName =
+        document.getElementById("aadharName")
+        .value.trim();
+
+    const email =
+        document.getElementById("email")
+        .value.trim();
+
+    const mobile =
+        document.getElementById("mobile")
+        .value.trim();
+
+    const countryCode =
+        document.getElementById("countryCode")
+        .value;
+
+    const password =
+        document.getElementById("password")
+        .value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword")
+        .value;
+
+    const permanentAddress =
+        document.getElementById("permanentAddress")
+        .value.trim();
+
+    const tempAddress =
+        document.getElementById("tempAddress")
+        .value.trim();
+
+    const photoInput =
+        document.getElementById("photo");
+
+
+    /* Username */
+
+    if (username === "") {
+
+        setError(
+            "username",
+            "Username is required."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Aadhar Name */
+
+    if (aadharName === "") {
+
+        setError(
+            "aadharName",
+            "Aadhar name is required."
+        );
+
+        isValid = false;
+
+    } else if (
+        username !== "" &&
+        aadharName.toLowerCase() !==
+        username.toLowerCase()
+    ) {
+
+        setError(
+            "aadharName",
+            "Aadhar name must match the username."
+        );
+
+        setError(
+            "username",
+            "Username and Aadhar name do not match."
+        );
+
+        isValid = false;
+
+        document
+            .getElementById("username")
+            .focus();
+    }
+
+
+    /* Email */
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (email === "") {
+
+        setError(
+            "email",
+            "Email is required."
+        );
+
+        isValid = false;
+
+    } else if (!emailPattern.test(email)) {
+
+        setError(
+            "email",
+            "Enter a valid email address."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Country Code */
+
+    if (countryCode === "") {
+
+        setError(
+            "mobile",
+            "Select a country code."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Mobile */
+
+    const mobilePattern =
+        /^[0-9]{10}$/;
+
+
+    if (mobile === "") {
+
+        setError(
+            "mobile",
+            "Mobile number is required."
+        );
+
+        isValid = false;
+
+    } else if (!mobilePattern.test(mobile)) {
+
+        setError(
+            "mobile",
+            "Enter exactly 10 digits."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Password */
+
+    if (password === "") {
+
+        setError(
+            "password",
+            "Password is required."
+        );
+
+        isValid = false;
+
+    } else if (password.length < 8) {
+
+        setError(
+            "password",
+            "Password must be at least 8 characters."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Confirm Password */
+
+    if (confirmPassword === "") {
+
+        setError(
+            "confirmPassword",
+            "Please confirm your password."
+        );
+
+        isValid = false;
+
+    } else if (
+        confirmPassword !== password
+    ) {
+
+        setError(
+            "confirmPassword",
+            "Passwords do not match."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Permanent Address */
+
+    if (permanentAddress === "") {
+
+        setError(
+            "permanentAddress",
+            "Permanent address is required."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Temporary Address */
+
+    if (tempAddress === "") {
+
+        setError(
+            "tempAddress",
+            "Temporary address is required."
+        );
+
+        isValid = false;
+    }
+
+
+    /* Photo */
+
+    if (photoInput.files.length === 0) {
+
+        setError(
+            "photo",
+            "Please upload a photo."
+        );
+
+        isValid = false;
+
+    } else {
+
+        const file =
+            photoInput.files[0];
+
+
+        const allowedTypes = [
+            "image/jpeg",
+            "image/png"
+        ];
+
+
+        const maxSize =
+            2 * 1024 * 1024;
+
+
+        if (!allowedTypes.includes(file.type)) {
+
+            setError(
+                "photo",
+                "Only JPG or PNG files are allowed."
+            );
+
+            isValid = false;
+
+        } else if (file.size > maxSize) {
+
+            setError(
+                "photo",
+                "File size must be under 2MB."
+            );
+
+            isValid = false;
+        }
+    }
+
+
+    /* Success */
+
+    if (isValid) {
+
+        successMsg.style.display = "block";
+
+        form.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+});
+
+
+/* Reset */
+
+document
+    .getElementById("resetBtn")
+    .addEventListener("click", function() {
+
+        clearErrors();
+
+        successMsg.style.display = "none";
+
+    });

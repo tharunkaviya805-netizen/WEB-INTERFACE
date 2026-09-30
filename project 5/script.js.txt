@@ -1,0 +1,103 @@
+let students = [
+    {
+        id: 1,
+        name: "Magesh",
+        status: "Absent"
+    },
+    {
+        id: 2,
+        name: "Arun",
+        status: "Absent"
+    },
+    {
+        id: 3,
+        name: "Kavin",
+        status: "Absent"
+    },
+    {
+        id: 4,
+        name: "Rahul",
+        status: "Absent"
+    },
+    {
+        id: 5,
+        name: "Vijay",
+        status: "Absent"
+    }
+];
+
+function markAttendance(id, status) {
+
+    students = students.map(function(student) {
+
+        if (student.id === id) {
+            return {
+                ...student,
+                status: status
+            };
+        }
+
+        return student;
+    });
+
+    displayStudents();
+}
+
+function displayStudents() {
+
+    const studentList = document.getElementById("studentList");
+
+    studentList.innerHTML = "";
+
+    students.forEach(function(student) {
+
+        const div = document.createElement("div");
+
+        div.className = "student";
+
+        div.innerHTML = `
+            <h3>${student.name}</h3>
+
+            <p>
+                Status:
+                <strong>${student.status}</strong>
+            </p>
+
+            <button
+                class="presentBtn"
+                onclick="markAttendance(${student.id}, 'Present')">
+                Present
+            </button>
+
+            <button
+                class="absentBtn"
+                onclick="markAttendance(${student.id}, 'Absent')">
+                Absent
+            </button>
+        `;
+
+        studentList.appendChild(div);
+    });
+
+    updateSummary();
+}
+
+function updateSummary() {
+
+    const presentCount = students.filter(function(student) {
+        return student.status === "Present";
+    }).length;
+
+    const absentCount = students.filter(function(student) {
+        return student.status === "Absent";
+    }).length;
+
+    document.getElementById("totalStudents").innerHTML = students.length;
+
+    document.getElementById("presentCount").innerHTML = presentCount;
+
+    document.getElementById("absentCount").innerHTML = absentCount;
+}
+
+/* Display students when page loads */
+displayStudents();
